@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Marcadores - Google Earth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Marcadores</h1>
+                <p class="subtitle">Selecione um local para navegar</p>
+            </div>
+            <ul class="marker-list" id="markerList">
+                <!-- Os marcadores serão inseridos aqui via JavaScript -->
+            </ul>
+        </aside>
+        
+        <main class="map-container">
+            <div class="map-header">
+                <h2 id="currentMarkerName">Carregando...</h2>
+                <p class="map-description">Vista do Google Earth</p>
+            </div>
+            <div class="map-wrapper">
+                <iframe 
+                    id="earthMap"
+                    title="Mapa Google Earth"
+                    src=""
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+                <div class="map-loading" id="mapLoading">
+                    <div class="loading-spinner"></div>
+                    <p>Carregando mapa...</p>
+                </div>
+                <div class="map-error" id="mapError" style="display: none;">
+                    <p>⚠️ Não foi possível carregar o mapa</p>
+                    <button onclick="reloadMap()" class="retry-btn">Tentar novamente</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
